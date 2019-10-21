@@ -8,10 +8,10 @@ import Routes from "../client/Routes";
 
 // this separates react server stuff from regular server stuff
 
-export default (req, store) => {
+export default (req, store, context) => {
   const content = renderToString(
-    <Provider store={store}>
-      <StaticRouter location={req.path} context={{}}>
+    <Provider store={store} context={{}}>
+      <StaticRouter location={req.path} context={context}>
         <div>{renderRoutes(Routes)}</div>
       </StaticRouter>
     </Provider>
