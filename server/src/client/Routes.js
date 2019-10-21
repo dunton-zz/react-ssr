@@ -1,17 +1,16 @@
 import React from "react";
-import Home from "./components/Home";
-import UsersList, { loadData } from "./components/UsersList";
+import HomePage from "./pages/HomePage";
+import UsersListPage, { loadData } from "./pages/UsersListPage";
 
 // setting it up like this to use SSR
 export default [
   {
+    ...HomePage,
     path: "/",
-    component: Home,
     exact: true
   },
   {
-    loadData,
-    path: "/users",
-    component: UsersList
+    ...UsersListPage,
+    path: "/users"
   }
 ];
